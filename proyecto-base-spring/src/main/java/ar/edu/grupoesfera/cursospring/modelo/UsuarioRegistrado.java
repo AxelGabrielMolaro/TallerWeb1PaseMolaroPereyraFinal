@@ -9,14 +9,20 @@ public class UsuarioRegistrado {
 	private String nombre;
 	private String apellido;
 	private String contraseña;
-	
+	//private String contraseña2;
 	private String mail;
 	
 	
 	private HashSet<Torneo> listaDeTorneos=new HashSet<Torneo>();
 	
-	public UsuarioRegistrado()
-	{}
+	public UsuarioRegistrado(String nombre,String apellido,String contraseña,String mail)
+	
+	{
+		this.nombre=nombre;
+		this.apellido=apellido;
+		this.contraseña=contraseña;
+		this.mail=mail;
+	}
 	
 	//getter and seters
 	public String getNombre() {
