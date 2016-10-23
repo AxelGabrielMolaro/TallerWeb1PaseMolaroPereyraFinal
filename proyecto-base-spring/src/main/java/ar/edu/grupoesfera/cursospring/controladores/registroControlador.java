@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.grupoesfera.cursospring.modelo.Torneo;
 import ar.edu.grupoesfera.cursospring.modelo.UsuarioRegistrado;
 import ar.edu.grupoesfera.cursospring.servicios.RegistroService;
 
@@ -43,6 +44,7 @@ public class registroControlador {
 			registroService.agregarUsuarioRegistradoAAlmacen(nombre, apellido, mail, contraseña);
 			modeloLoginForm.put("listaDeUsuarios", registroService.mostrarUsuariosRegistradosEnAlmacen());
 			modeloLoginForm.put("usuario",new UsuarioRegistrado(null, null, null, null));
+			modeloLoginForm.put("torneo",new Torneo(null));//esto para que muestreel busar torneo el index
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
