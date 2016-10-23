@@ -11,7 +11,7 @@ import ar.edu.grupoesfera.cursospring.modelo.UsuarioRegistrado;
 @Service("usuarioRegistrado")
 public class UsuarioRegistradoServiceImpl implements UsuarioRegistradoService {
 
-	private UsuarioRegistrado u1=new UsuarioRegistrado();
+	private UsuarioRegistrado u1=new UsuarioRegistrado("axel", "molaro", "axelmolaro", "axelmolaro@hotmail.com");
 	
 	@Override
 	public void agregarTorneo(String nombre) throws Exception {
