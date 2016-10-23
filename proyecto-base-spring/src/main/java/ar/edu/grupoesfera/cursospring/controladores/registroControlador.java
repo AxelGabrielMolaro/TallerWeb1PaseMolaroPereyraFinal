@@ -18,6 +18,7 @@ public class registroControlador {
 	@Inject
 	private RegistroService registroService;
 	
+	//fformulario de registro
 	@RequestMapping("registro")
 	public ModelAndView modeloRegistroForm()
 	{
@@ -27,6 +28,7 @@ public class registroControlador {
 		return new ModelAndView("formularioDeRegistro",modeloRegistroForm);
 	}
 	
+	//agrego un Uuser Registrado
 	@RequestMapping(value="loginFormularioLogin",method= RequestMethod.POST)
 	public ModelAndView loginFormulario1(
 			@RequestParam ("nombre") String nombre,
@@ -46,8 +48,8 @@ public class registroControlador {
 			e.printStackTrace();
 		}
 		
-		
-		return new  ModelAndView("loginForm",modeloLoginForm);
+		//return new  ModelAndView("loginForm",modeloLoginForm); antes
+		return new  ModelAndView("home",modeloLoginForm);//rediriege al home ahora
 				
 	}
 	

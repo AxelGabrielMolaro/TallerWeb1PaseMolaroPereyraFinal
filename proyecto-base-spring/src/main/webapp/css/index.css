@@ -1,0 +1,52 @@
+@CHARSET "ISO-8859-1";
+
+
+
+.mitadIzq
+{
+	background-color: gray;
+	height: 600px;
+}
+
+.mitadDer
+{
+	background-color: blue;
+	color:white;
+	background-color: gray;
+	height: 600px;
+}
+.palabraOrganizador
+{
+	background-color: green;
+	color:white;
+	padding: 10px;
+	float: left;
+	magin-top:6%;
+	font-size: 20pt;
+}
+.quieroSer
+{
+	top:20%;
+	font-size:15pt;
+}
+.formularioLogin
+{
+	top:50%
+	color:black;
+}
+.formularioLogin input
+{
+	width: 100%;
+	color:green;
+	margin-bottom: 4px;
+}
+.formularioBuscarTorneo
+{
+	color :white;
+}
+.formularioBuscarTorneo input
+{
+ width: 100%;
+ color:green;	
+ margin-bottom: 4px;
+}
