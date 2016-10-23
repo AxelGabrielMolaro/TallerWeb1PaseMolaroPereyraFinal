@@ -15,8 +15,8 @@ public class EquipoServiceImpl implements EquipoService {
 	
 	
 	//lo agregre pq no hay bdd
-	public Equipo e1=new Equipo("alte");
-	
+	  public Equipo e1=new Equipo("alte");
+
 	public EquipoServiceImpl() {
 		//modificando clase con interfaz asdasd
 	}
@@ -24,8 +24,7 @@ public class EquipoServiceImpl implements EquipoService {
 	
 	
 	
-	
-	
+
 	@Override
 	public void agregarJugador(String nombre,String apellido,Integer documento) throws Exception
 	{

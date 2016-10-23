@@ -19,6 +19,17 @@ public class Equipo implements Comparable<Equipo>{
 	}
 	
 	
+	//-------------------------------//
+	
+	 public static Equipo getSingletonInstance(String nombre) {
+	        if (equipoInstance == null){
+	            equipoInstance = new Equipo(nombre);
+	        }
+	        return equipoInstance;
+	    }
+	//------------------------------//
+	
+	
 	//comparable
 		@Override
 		public int compareTo(Equipo o) {

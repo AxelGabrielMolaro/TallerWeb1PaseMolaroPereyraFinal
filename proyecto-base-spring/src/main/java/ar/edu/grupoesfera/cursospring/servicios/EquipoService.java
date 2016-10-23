@@ -8,6 +8,8 @@ public interface EquipoService {
 
 	
 	
+	//equipo usado
+	//ublic void equipoAUsar(String nombre);
 	
 	//agrega
 	public void agregarJugador(String nombre, String apellido, Integer documento)throws Exception;
