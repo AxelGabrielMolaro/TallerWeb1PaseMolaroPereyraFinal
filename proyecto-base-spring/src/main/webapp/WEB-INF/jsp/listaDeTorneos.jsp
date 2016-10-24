@@ -6,8 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<head>
-<meta charset="utf-8">
+ <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -15,18 +15,22 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>lista de torneos</title>
+    <title>Theme Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" >
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
-</head>
+  </head>
 <body >
 	
-		<h1>Lista de torneos</h1>
-		<br>
+	
+<div class="col-md-1">
+	<div class="tablaTorneo col-md-offset-3 col-md-8">
+		<div class="tituloTablaTorneo col-md-12"> 
+			Lista De Torneos
+		</div>
 		<table class="table table-striped col-md-6">
 			<tr>
 				<th>Nombre </th>
@@ -43,6 +47,12 @@
 				
 			</c:forEach>
 		</table>	
+	
+		</div>
+  
+</div>
+		<br>
+		
 			<a href="agregarTorneo">agregar torneo</a> 
 			
 		

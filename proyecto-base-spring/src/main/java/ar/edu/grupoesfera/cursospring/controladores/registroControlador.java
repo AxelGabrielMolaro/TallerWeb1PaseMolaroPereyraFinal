@@ -55,6 +55,29 @@ public class registroControlador {
 				
 	}
 	
+	//validacion posta refirige a hom2
+	
+	
+		@RequestMapping(value="home2",method=RequestMethod.POST)
+		public ModelAndView validacionDelLogin2(
+				@RequestParam("mail") String mail,
+				@RequestParam("contraseña") String contraseña
+				
+				)
+		{
+			ModelMap modelosValidarLogin2=new ModelMap();
+			try {
+				modelosValidarLogin2.put("resultado",registroService.validarLoginMailContra(mail, contraseña));
+				modelosValidarLogin2.put("c",contraseña);
+				modelosValidarLogin2.put("m", mail);
+			} catch (Exception e) {
+				ModelMap modelExepcion=new ModelMap();
+				modelExepcion.put("exepcion",e.getMessage());
+				return new ModelAndView("exepcion",modelExepcion);
+			}
+			return new ModelAndView("homeLogueado",modelosValidarLogin2);
+		}
+		
 	//validacion
 	@RequestMapping(value="validacionPrueba",method=RequestMethod.POST)
 	public ModelAndView validacionDelLogin(
@@ -66,8 +89,8 @@ public class registroControlador {
 		ModelMap modelosValidarLogin2=new ModelMap();
 		try {
 			modelosValidarLogin2.put("resultado",registroService.validarLoginMailContra(mail, contraseña));
-			modelosValidarLogin2.put("c",contraseña);
-			modelosValidarLogin2.put("m", mail);
+			modelosValidarLogin2.put("contra",contraseña);
+			modelosValidarLogin2.put("mail", mail);
 		} catch (Exception e) {
 			ModelMap modelExepcion=new ModelMap();
 			modelExepcion.put("exepcion",e.getMessage());

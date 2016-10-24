@@ -34,7 +34,7 @@
 	</div>
 	<div class="col-md-6 mitadDer">
 		<div class="col-md-offset-3 col-md-4  formularioLogin">
-			 <form:form action="validacionPrueba" modelAttribute="usuario" method="post">
+			 <form:form action="home2" modelAttribute="usuario" method="post">
 	
 				mail
 				<form:input path="mail"/>

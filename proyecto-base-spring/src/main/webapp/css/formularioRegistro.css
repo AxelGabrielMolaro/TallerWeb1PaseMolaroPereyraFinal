@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+
+.formularioRegistro input
+{
+	width: 100%;
+	margin-bottom: 4px;
+}
