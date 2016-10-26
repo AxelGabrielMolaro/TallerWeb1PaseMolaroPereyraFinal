@@ -10,9 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	lista de equipos en torneo
-	<br>
-	<table class="table condensed">
+	<div class="container-fluid">
+		<div class="col-md-6 col-md-offset-3">
+			<table class="table condensed">
 			
 			<th>Equipo</th>
 			
@@ -28,8 +28,10 @@
 			</c:forEach>
 			
 	</table>
-	
-	<a href="agregarEquipo"><input type="button" value="agregar Otro equipo al torneo"></a>
+		</div>
+		
+	</div>
+	<a href="agregarEquipo"><input class="btn btn-success" type="button" value="Agregar otro equipo al torneo"></a>
 	<!-- <a href="modificarEquipo" ><input type="button"  value="modificarUnEquipo"></a>  -->
 	
 	

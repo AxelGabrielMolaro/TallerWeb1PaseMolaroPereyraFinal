@@ -4,10 +4,17 @@ import java.util.HashSet;
 import java.util.TreeMap;
 
 public class Torneo {
-
+	
+		private static Torneo instance;
 		private String nombre;
 		private HashSet<Equipo> listaDeEquipos=new HashSet<Equipo>();
 		
+		public static Torneo getInstance(){
+			if(instance==null){
+				instance = new Torneo(null);
+			}
+			return instance;
+		}
 		
 		public Torneo(String nombre)
 		{

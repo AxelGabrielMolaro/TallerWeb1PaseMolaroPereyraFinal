@@ -5,6 +5,7 @@ import java.util.HashSet;
 import org.hibernate.annotations.common.util.StringHelper;
 
 import ar.edu.grupoesfera.cursospring.modelo.Equipo;
+import ar.edu.grupoesfera.cursospring.modelo.Torneo;
 
 public interface TorneoService {
 	
@@ -21,4 +22,6 @@ public interface TorneoService {
 	void agregarEquipoAalTorneo(String nombre);
 	//ver quipo
 	public void seleccionarEquipoATrabajar(String nombre);
+
+	Torneo buscarTorneo(String nombre) throws Exception;
 }

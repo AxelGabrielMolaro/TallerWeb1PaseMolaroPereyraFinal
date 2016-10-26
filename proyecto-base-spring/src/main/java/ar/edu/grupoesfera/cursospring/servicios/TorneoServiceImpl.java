@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.grupoesfera.cursospring.modelo.Equipo;
 import ar.edu.grupoesfera.cursospring.modelo.Torneo;
+import ar.edu.grupoesfera.cursospring.modelo.UsuarioRegistrado;
 
 @Service("TorneoService")
 public class TorneoServiceImpl implements TorneoService{
@@ -17,6 +18,22 @@ public class TorneoServiceImpl implements TorneoService{
 	public HashSet<Equipo> mostrarEquipos() {
 		return t1.getListaDeEquipos();
 		
+	}
+	
+	@Override
+	public Torneo buscarTorneo (String nombre) throws Exception{
+	UsuarioRegistrado torneoBusqueda = new UsuarioRegistrado(null, null, null, null);
+		if(torneoBusqueda.getListaDeTorneos().contains(nombre)){
+			
+			for ( Torneo torneo : torneoBusqueda.getListaDeTorneos()){
+				if(torneo.equals(torneoBusqueda)){
+					return torneo;
+				}
+			}
+		}else{
+			throw new Exception("No se encontro el torneo");
+		}
+			return null;
 	}
 	
 	@Override
