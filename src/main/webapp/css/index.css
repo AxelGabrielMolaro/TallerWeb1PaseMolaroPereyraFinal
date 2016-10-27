@@ -1,0 +1,105 @@
+@CHARSET "ISO-8859-1";
+
+
+.color
+{
+	color:red;
+}
+.mitadIzq
+{
+	background-color: gray;
+	height: 600px;
+}
+
+.mitadDer
+{
+	background-color: blue;
+	color:white;
+	background-color: gray;
+	height: 600px;
+}
+.palabraOrganizador
+{
+	background-color: green;
+	color:white;
+	padding: 10px;
+	float: left;
+	magin-top:6%;
+	font-size: 20pt;
+}
+.quieroSer
+{
+	top:20%;
+	font-size:15pt;
+}
+.formularioLogin
+{
+	top:50%
+	color:black;
+}
+.formularioLogin input
+{
+	width: 100%;
+	color:green;
+	margin-bottom: 4px;
+}
+.formularioBuscarTorneo
+{
+	color :white;
+}
+.formularioBuscarTorneo input
+{
+ width: 100%;
+ color:green;	
+ margin-bottom: 4px;
+}
+
+/*index 2*/
+
+
+.contenido
+{
+	
+	background-image: url("http://www.uruguayeduca.edu.uy/UserFiles/P0001/Image/2009/MatemticaPrimaria/Milena/Para%20otros%20recursos/cancha.jpg");
+	height: 1280px;
+	
+	background-repeat: no-repeat;
+	background-size:100%;
+}
+.usuarioLoguiado
+{
+	color:white;
+	margin-top: 4%;
+}
+.personita img
+{
+	height:80px;
+}
+
+.menu
+{
+	
+}
+
+.menu ul li
+{
+	float: left;
+	list-style: none;
+	color: white;
+	background-color: gray;
+	margin-left: 2px;
+	padding: 4px;
+	margin-top:35%;
+	
+}
+.menu  a
+{
+	text-decoration: none;
+	
+}
+
+.menu a:HOVER  li
+{
+	background: white;
+	color: black;
+}
