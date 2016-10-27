@@ -1,7 +1,10 @@
 @CHARSET "ISO-8859-1";
 
 
-
+.color
+{
+	color:red;
+}
 .mitadIzq
 {
 	background-color: gray;

@@ -1,0 +1,37 @@
+@CHARSET "ISO-8859-1";
+
+
+		.tablaEquipos
+		{
+		 width: 100%;
+		 background-color: white;
+		 color:green;
+		}
+		
+		.tablaEquipos table 
+		{
+		 width: 100%;
+		 border:2px solid green;
+		 text-align: center;
+		}
+		.tablaEquipos table thead
+		{
+		 width: 100%;
+		 background-color:green;
+		 color:white;
+		
+		 text-align: center;
+		}
+		
+		.tablaEquipos td 
+		{
+		 width: 100%;
+		 background-color: red;
+		 
+		 
+		 
+		}
+	
+body {
+	color:blue;
+}

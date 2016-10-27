@@ -17,7 +17,7 @@
 	<div class="container-fluid">
 		<div class="col-md-6 col-md-offset-3">
 			<h2 class="text-info text-center">Agregar jugador <small>Ingrese sus datos</small></h2>
-			<form:form action="equipo" modelAttribute="jugador" method="POST">
+			<form:form action="equipo2" modelAttribute="jugador" method="POST">
 				<div class="form-group">			
 					<form:label path="nombre"> Nombre:</form:label>
 					<form:input class="form-control" path="nombre" />

@@ -26,21 +26,21 @@ public class ABMJugador {
 	
 	
 	//mostrarEquipoVacio
-	@RequestMapping("equipoVacio")
+	@RequestMapping("usuarioRegistrado/verTorneo/{nombreDelTorneo}/equipo/{nombreDelEquipo}")
 	public ModelAndView mostrarEquipoVacio(
-			
+			@PathVariable ("nombreDelEquipo") String nombreEquipo
 			)
 	{
 		ModelMap modeloEquipoVacio=new ModelMap();
 		modeloEquipoVacio.put("listaDeJugadores", equipoService.MostrarJugadores());
-	
+		modeloEquipoVacio.put("nombreEquipo", nombreEquipo);
 		return new ModelAndView("equipo",modeloEquipoVacio);
 	}
 	
 	
 	
 	//agregar Jugador
-	@RequestMapping("/agregarJugador")
+	@RequestMapping("usuarioRegistrado/verTorneo/{nombreDelTorneo}/equipo/{nombreDelEquipo}/agregarJugador")
 	public ModelAndView agregarJugadorForm()
 	{
 		ModelMap modeloAgregarJ=new ModelMap();
@@ -49,11 +49,13 @@ public class ABMJugador {
 	}
 	
 	//mostrar equipo con un jugador
-	@RequestMapping(value="/equipo",method = RequestMethod.POST)
+	@RequestMapping(value="usuarioRegistrado/verTorneo/{nombreDelTorneo}/equipo/{nombreDelEquipo}/equipo2",method = RequestMethod.POST)
 	public ModelAndView obtenerUnaListDeJug(
 			@RequestParam ("apellido") String apellido,
 			@RequestParam ("nombre") String nombre,
-			@RequestParam ("documento")Integer documento
+			@RequestParam ("documento")Integer documento,
+			@PathVariable ("nombreDelTorneo")String nombreTorneo,
+			@PathVariable("nombreDelEquipo")String nombreEquipo
 
 			)
 	{
@@ -62,7 +64,9 @@ public class ABMJugador {
 			HashSet<Jugador>listaDejugadores=this.equipoService.MostrarJugadores();
 			ModelMap modeloAgregarJugador=new ModelMap();
 			modeloAgregarJugador.put("listaDeJugadores", listaDejugadores);
-			return new ModelAndView("equipo",modeloAgregarJugador);
+			modeloAgregarJugador.put("nombreTorneo", nombreTorneo);
+			modeloAgregarJugador.put("nombreEquipo", nombreEquipo);
+			return new ModelAndView("equipo2",modeloAgregarJugador);//cree equyipo 2 por un bug
 		} catch (Exception e) {
 			ModelMap modelExepcion=new ModelMap();
 			modelExepcion.put("exepcion",e.getMessage());
@@ -76,7 +80,7 @@ public class ABMJugador {
 	
 	
 	//eliminar
-	@RequestMapping(value="/{documento}",method = RequestMethod.GET)
+	@RequestMapping(value="usuarioRegistrado/verTorneo/{nombreDelTorneo}/equipo/{nombreDelEquipo}/{documento}",method = RequestMethod.GET)
 	public ModelAndView eliminarJugadorGet(
 			@PathVariable ("documento")Integer documento
 			)
@@ -89,10 +93,10 @@ public class ABMJugador {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new ModelAndView("equipo",modeloEliminar);
+		return new ModelAndView("equipo3",modeloEliminar);
 	}
 	//modificar
-	@RequestMapping("/modificarJugador")
+	@RequestMapping("usuarioRegistrado/verTorneo/{nombreDelTorneo}/equipo/{nombreDelEquipo}/modificarJugador")
 	public ModelAndView modificarJugadorForm()
 	{
 		ModelMap modeloModificar1=new ModelMap();
@@ -103,7 +107,7 @@ public class ABMJugador {
 	}
 	
 	
-	@RequestMapping(value="/moficarJugador2",method = RequestMethod.POST)
+	@RequestMapping(value="usuarioRegistrado/verTorneo/{nombreDelTorneo}/equipo/{nombreDelEquipo}/moficarJugador2",method = RequestMethod.POST)
 	public ModelAndView modificarJugadorForm2
 	(
 		@RequestParam("documento")Integer documento
@@ -119,7 +123,7 @@ public class ABMJugador {
 		return new ModelAndView("modificarFormulario2",modeloModif2);
 	}
 	
-	@RequestMapping(value="/modificarJugador3",method = RequestMethod.POST)
+	@RequestMapping(value="usuarioRegistrado/verTorneo/{nombreDelTorneo}/equipo/{nombreDelEquipo}/modificarJugador3",method = RequestMethod.POST)
 	public ModelAndView modificarJugadorForm3
 	(
 		@RequestParam ("apellido") String apellido,
@@ -138,7 +142,7 @@ public class ABMJugador {
 
 				//nada aun
 		}
-		return new ModelAndView("equipo",modeloModif3);
+		return new ModelAndView("equipo3",modeloModif3);
 	}
 	
 	

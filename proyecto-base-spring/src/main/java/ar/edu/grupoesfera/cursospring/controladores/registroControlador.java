@@ -70,6 +70,7 @@ public class registroControlador {
 				modelosValidarLogin2.put("resultado",registroService.validarLoginMailContra(mail, contraseña));
 				modelosValidarLogin2.put("c",contraseña);
 				modelosValidarLogin2.put("m", mail);
+				modelosValidarLogin2.put("torneo",new Torneo(null));//para mostrar el buscar toneo
 			} catch (Exception e) {
 				ModelMap modelExepcion=new ModelMap();
 				modelExepcion.put("exepcion",e.getMessage());

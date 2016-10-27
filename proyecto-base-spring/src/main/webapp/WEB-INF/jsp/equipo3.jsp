@@ -29,9 +29,8 @@
 		</table>	
 		<div class="col-md-6 col-md-offset-3 text-center">
 		
-			<a href="${nombreEquipo}/agregarJugador">Agregar Jugador<br><br>
+			<a href="agregarJugador">Agregar Jugador<br><br>
 			<a href="modificarJugador"><input class="col-center btn btn-sm btn-warning" type="button" value="Modificar Jugador"></a>
 		</div>
 	</div>
 </body>
-</html>

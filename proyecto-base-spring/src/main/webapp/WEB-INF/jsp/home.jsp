@@ -15,40 +15,41 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
-<div class="container-fluid">
 
-	<div class="col-md-6 mitadIzq">
-		<div class="col-md-offset-2 col-md-8 formularioBuscarTorneo">
-			<form:form action="#" modelAttribute="torneo">
-			
-			Buscar Torneo
-			<br>
-			Nombre del torneo
-			<br>
-			<form:input path="nombre"/>
-			<br>
-			<input type="submit" class="btn btn-success" valur="Buscar torneo">	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xm-12 ">
+				<form:form action="buscar" modelAttribute="torneo">
+				<div class="form-group">
+					<form:label path="nombre"> Nombre del torneo</form:label>
+					<form:input class="form-control" placeholder="Buscar" path="nombre"/>
+					<div class="form-group">
+						<input class="btn btn-warning" type="submit" value="Buscar">
+					</div>
+				</div>
+				</form:form>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xm-12">
+				<form:form action="home2" modelAttribute="usuario" method="post">
+					<div class="form-group">
+						<form:label path="mail"> Correo</form:label>
+						<form:input placeholder="Correo" class="form-control" path="mail"/>
+					</div>
+					<div class="form-group">
+						<form:label path="mail"> Contraseña</form:label>
+						<form:input  placeholder="Contraseña" class="form-control" path="contraseña"/>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-success" value="Entrar">
+					</div>
+					<div class="form-group">
+						<a href="registro"><input type="button" class="btn btn-warning"  class="btn btn-success" value="Quiero ser organizador"></a>
+					</div>
+					
+				</form:form>
+			</div>
+		</div>
 		
-			</form:form>
-		</div>
 	</div>
-	<div class="col-md-6 mitadDer">
-		<div class="col-md-offset-3 col-md-4  formularioLogin">
-			 <form:form action="home2" modelAttribute="usuario" method="post">
-	
-				mail
-				<form:input path="mail"/>
-				contraseña
-				<form:input path="contraseña"/>
-				<input type="submit" class="btn btn-success" value="login">
-				
-			</form:form>
-				
-		</div>
-		<div class=" col-md-offset-3 col-md-9 quieroSer">
-			<span class="col-md-12">Quiero ser</span> <a href="registro"><span class=" col-md-5 palabraOrganizador">organizador</span></a>
-		</div>
-	</div>
-</div>
 </body>
 </html>

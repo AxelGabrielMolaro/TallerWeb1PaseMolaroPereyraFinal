@@ -21,38 +21,59 @@ public class ABMEEquipo {
 	@Inject
 	private TorneoService  torneoServise;
 	
-	@RequestMapping("/torneo/agregarEquipo")
-	public ModelAndView agregarTorneo()
+	@RequestMapping("usuarioRegistrado/verTorneo/{nombreDeTorneo}/agregarEquipo")
+	public ModelAndView agregarTorneo(
+			@PathVariable ("nombreDeTorneo") String nombreDeTorneo
+			)
 	{
 		ModelMap modelAgregarTorneo= new ModelMap();
 		modelAgregarTorneo.put("equipo", new Equipo(null));
+		modelAgregarTorneo.put("nombreTorneo", nombreDeTorneo);//mostrar el nombre del torneo
 		
 		return new ModelAndView("torneoFormularioAgregar",modelAgregarTorneo);
 	}
 	
 	
-	@RequestMapping("/torneo/torneoEquipos")
+	//ver lista de equipos vacio
+	@RequestMapping("usuarioRegistrado/verTorneo/{nombreDeTorneo}")
+	public ModelAndView mostrarEquiposDeUnTorneoVacio
+	(
+			@PathVariable ("nombreDeTorneo") String nombreDeTorneo
+	)
+	
+	{
+		ModelMap TorneoVacioModelo=new ModelMap();
+		TorneoVacioModelo.put("listaDeEquipos", torneoServise.mostrarEquipos());
+		TorneoVacioModelo.put("nombreTorneo", nombreDeTorneo);
+		return new ModelAndView("listaDeEquiposEnTorneo",TorneoVacioModelo);		
+	}
+	
+	@RequestMapping("usuarioRegistrado/verTorneo/{nombreDeTorneo}/torneoEquipos")
 	public ModelAndView mostrarEquiposDeUnTorneoVista (
-			@RequestParam ("nombre") String nombre
+			@RequestParam ("nombre") String nombre,
+			@PathVariable ("nombreDeTorneo") String nombreDeTorneo
+			
 			)
 	{
 		ModelMap modeloTorneoEquipos=new ModelMap();
 		torneoServise.agregarEquipoAalTorneo(nombre);
 		modeloTorneoEquipos.put("listaDeEquipos", torneoServise.mostrarEquipos());
-		
-		return new ModelAndView("listaDeEquiposEnTorneo",modeloTorneoEquipos);
+		modeloTorneoEquipos.put("nombreTorneo", nombreDeTorneo);//mostrar el nombre del torneo
+		return new ModelAndView("listaDeEquiposEnTorneoAgregar",modeloTorneoEquipos);//cree el agregar y el lista eliminar para evitar bugs
 	}
 	
-	@RequestMapping(value="/torneo/{equipoAEliminar}",method = RequestMethod.GET)
+	@RequestMapping(value="usuarioRegistrado/verTorneo/{nombreDeTorneo}/{equipoAEliminar}",method = RequestMethod.GET)
 	public ModelAndView eliminarUnEquipoPorUrl1(
-			@PathVariable ("equipoAEliminar") String nombre1
+			@PathVariable ("equipoAEliminar") String nombre1,
+			@PathVariable ("nombreDeTorneo") String nombreDeTorneo
 			)
 	{
 		
 		ModelMap modeloEliminar1= new ModelMap();
 		torneoServise.eliminarEquipoDeTorneo(nombre1);
+		modeloEliminar1.put("nombreTorneo", nombreDeTorneo);//mostrar el nombre del torneo
 		modeloEliminar1.put("listaDeEquipos", torneoServise.mostrarEquipos());
-		return new ModelAndView("listaDeEquiposEnTorneo",modeloEliminar1);
+		return new ModelAndView("listaDeEquiposEnTorneoEliminar",modeloEliminar1);
 	
 	}
 	//modificar

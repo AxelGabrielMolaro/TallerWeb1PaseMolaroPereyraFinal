@@ -6,12 +6,19 @@ import javax.management.loading.PrivateClassLoader;
 
 public class UsuarioRegistrado {
 	
+	private static UsuarioRegistrado instance;
 	private String nombre;
 	private String apellido;
 	private String contraseña;
 	//private String contraseña2;
 	private String mail;
 	
+	public static UsuarioRegistrado getInstance(){
+		if(instance==null){
+			instance = new UsuarioRegistrado(null,null,null,null);
+		}
+		return instance;
+	}
 	
 	private HashSet<Torneo> listaDeTorneos=new HashSet<Torneo>();
 	

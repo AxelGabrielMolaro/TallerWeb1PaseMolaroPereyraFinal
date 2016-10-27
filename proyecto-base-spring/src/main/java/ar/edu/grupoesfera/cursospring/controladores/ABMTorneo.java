@@ -3,6 +3,7 @@ package ar.edu.grupoesfera.cursospring.controladores;
 import javax.inject.Inject;
 
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.grupoesfera.cursospring.modelo.Torneo;
+import ar.edu.grupoesfera.cursospring.modelo.UsuarioRegistrado;
 import ar.edu.grupoesfera.cursospring.servicios.UsuarioRegistradoService;
 
 @RestController
@@ -25,6 +27,20 @@ public class ABMTorneo {
 		ModelMap modeloVacio=new ModelMap();
 		modeloVacio.put("listaDeTorneos", usuarioRegistradoService.MostrarTorneos());
 		return new ModelAndView("listaDeTorneos",modeloVacio);
+	}
+	
+	//Buscar torneo
+	@RequestMapping(value="buscar",method=RequestMethod.POST)
+	public ModelAndView buscarTorneo(@ModelAttribute("SpringMvc")@RequestParam("nombre")String nombre,ModelMap model) throws Exception{
+		try{
+			System.out.print("entre en el try");
+			model.put("torneoBuscado",this.usuarioRegistradoService.buscarTorneo(nombre));
+			return new ModelAndView ("resultadoBusquedaTorneo",model);
+		}catch(Exception e){
+			ModelMap modelExepcion=new ModelMap();
+			modelExepcion.put("exepcion",e.getMessage());
+			return new ModelAndView("exepcion",modelExepcion);
+		}
 	}
 	
 	//agregar equipo
