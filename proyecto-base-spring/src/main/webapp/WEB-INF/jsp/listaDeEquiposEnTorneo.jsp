@@ -28,7 +28,7 @@
 				<tr>
 					<td>${list.getNombre()} <a href="equipo/${list.getNombre()}">Ver Equipo</a> <a href="${list.getNombre()}">Eliminar Equipo</a></td>
 				
-				
+				<!-- adada -->
 				
 				
 				</tr>
